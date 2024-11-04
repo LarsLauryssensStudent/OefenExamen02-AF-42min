@@ -78,7 +78,11 @@ namespace OefenExamen02.Services
 
         public Property Add(Property newProperty)
         {
-            
+            Random random = new Random();
+            if ( 10 < random.Next(0,20))
+            {
+                throw new ArgumentException("Random exceptionez, Unlucky toch...");
+            }
             // Method implementation here
             newProperty.Id = _properties.Count + 1;
             newProperty.IsSold = false;
